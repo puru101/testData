@@ -1,0 +1,46 @@
+ayushsadh1998@gmail.com
+
+password 7415956206
+
+
+1. Add/Edit/Delete flow of Organization Logo.
+2. Diabetes "Notes detail" changes.
+3. Added unknown reading type in Blood glucose reading, and report changes. (circle indicate as unknown type)
+	
+---------------
+var notedetaillabel="<fmt:message key='diabetes.label.notedetail'/>";
+
+var nobpDatafound="<fmt:message key='report.vital.bp.nodatafound'/>";
+var noa1cDatafound="<fmt:message key='report.vital.a1c.nodatafound'/>";
+var nobgDatafound="<fmt:message key='report.vital.bg.nodatafound'/>";
+var nospo2Datafound="<fmt:message key='report.vital.spo2.nodatafound'/>";
+var notemperatureDatafound="<fmt:message key='report.vital.temperature.nodatafound'/>";
+var nocholesterolDatafound="<fmt:message key='report.vital.cholesterol.nodatafound'/>";
+var nohrDatafound="<fmt:message key='report.vital.hr.nodatafound'/>";
+
+
+squre : Postmeal
+trin: fasting
+circle: unknown
+
+
+No data found
+
+
+
+
+3. Add new slider in cholesterol vital.
+4. Added input file for cholesterol vital.
+
+
+Questions:
+1. What is the Priority to show "last activity date" on Engagement report, required in Feb release or after this?
+2. On downloaded diabetes report, need to show "Notes detail" somewhere? If yes, so please confirm, where we will display "Notes detail" on downloaded pdf.
+3. 
+
+
+Demo comments:
+Fixed size logo comes on reports and commonheader.
+"last activity date" on Engagement report task take later after Feb release.
+Notes detail on Diabetes report come below on next due date.
+

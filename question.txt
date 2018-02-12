@@ -1,0 +1,59 @@
+MSCM-3260 : Patient Creation- Load icon disappears before page load completely in patient creartion.
+MSCM-3856 : Patient creation - While creating the patient, if the contact and preferences tab have validation error so on clicking on save button on preference tab should not take to contact tab. 
+
+
+
+OrganizationTestScheduler
+Hi Sir,
+
+Add flow of organizationtestscheduler has been completed when new organization is created and I also write query to add default entry for existing organization.
+
+
+CREATE TABLE organizationtestscheduler
+(
+  id bigint NOT NULL,
+  orgid bigint NOT NULL,
+  testtype bigint,	 
+  testschedule integer,
+  isactive boolean DEFAULT true,
+  isdeleted boolean DEFAULT false,
+  createdby bigint,
+  createddate timestamp without time zone,
+  updatedby bigint,
+  updateddate timestamp without time zone,
+  CONSTRAINT pk_organizationtestscheduler PRIMARY KEY (id),
+  CONSTRAINT fk_typesdata_id FOREIGN KEY (testschedule)
+      REFERENCES public.typesdata (id) MATCH SIMPLE,
+  CONSTRAINT fk_organizationscheduler_orgid FOREIGN KEY (orgid)
+      REFERENCES public.organization (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+
+INSERT INTO organizationtestscheduler(orgid, testtype, testschedule, isactive, isdeleted, createdby, createddate, updatedby, updateddate)
+    VALUES ( 1, 211, 3, true, false, 2, CURRENT_TIMESTAMP, 2, CURRENT_TIMESTAMP);
+
+INSERT INTO organizationtestscheduler(orgid, testtype, testschedule, isactive, isdeleted, createdby, createddate, updatedby, updateddate)
+    VALUES ( 1, 212, 3, true, false, 2, CURRENT_TIMESTAMP, 2, CURRENT_TIMESTAMP);
+
+INSERT INTO organizationtestscheduler(orgid, testtype, testschedule, isactive, isdeleted, createdby, createddate, updatedby, updateddate)
+    VALUES ( 1, 213, 3, true, false, 2, CURRENT_TIMESTAMP, 2, CURRENT_TIMESTAMP);	
+	
+	
+	
+	INSERT INTO organizationtestscheduler(orgid, testtype, testschedule, isactive, isdeleted, createdby, createddate, updatedby, updateddate)
+    select id, 150, 45, 45, 45, 2, CURRENT_TIMESTAMP, 
+            2, CURRENT_TIMESTAMP, true, 60, 60, 15, CURRENT_DATE, 2300, 2 from organization);
+			
+			
+			
+			
+			
+
+http://localhost:8080/rest-medsolis/organizationTestScheduler/saveOrganizationTestScheduler
+
+orgid: 558
+
+{"testScheduler":[
+{"testType":211,"testSchedule":3},
+{"testType":212,"testSchedule":6},
+{"testType":213,"testSchedule":6}]}
